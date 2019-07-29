@@ -3,6 +3,7 @@ const tempElement = document.querySelector('.temperature-value p');
 const descElement = document.querySelector('.temperature-description p');
 const locationElement = document.querySelector('.location p');
 const notificationlement = document.querySelector('.notification');
+const dateElement = document.getElementById('date');
 
 
 const weather = {};
@@ -86,3 +87,8 @@ tempElement.addEventListener("click", function(){
 			weather.temperature.unit = "celsius"
 	}
 });
+
+
+const optionsDate= {day: 'numeric', month: 'short', weekday : 'long'};
+const today = new Date();
+dateElement.innerHTML = today.toLocaleDateString('uk', optionsDate);
